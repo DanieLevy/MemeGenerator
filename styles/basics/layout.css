@@ -1,0 +1,37 @@
+.main-layout {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    min-height: 100vh;
+}
+
+.main-layout > * {
+    grid-column: 2;
+}
+
+.main-layout > .main-header {
+    grid-row: 1;
+}
+
+.main-layout > *:not(.full) {
+    grid-column: 2;
+  }
+  
+  .main-layout > *.full {
+    grid-column: 1/-1;
+  }
+
+.main-layout > .main-footer {
+    grid-row: 3;
+}
+
+
+.main-container {
+    grid-column: 2;
+}
+
+.meme-container {
+    grid-template-columns: 350px 1fr 350px;
+    /* background-color: #42df34; */
+    gap: 20px;
+    padding: 20px;
+}

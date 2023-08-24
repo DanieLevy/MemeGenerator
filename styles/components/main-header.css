@@ -1,0 +1,56 @@
+.main-header > * {
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    background-color: #997ec4c7;
+    box-shadow: 0 0 10px 1px rgb(195, 195, 195);
+    border-radius: 0 0 15px 15px;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    max-height: fit-content;
+}
+
+.main-nav {
+    margin-inline-end: 30px;
+    /* max-width: 100px; */
+}
+
+.main-nav > * a {
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.main-nav > * a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.main-header * > .logo > * {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    margin-inline-start: 30px;
+}
+
+.main-header * > .logo > *:hover {
+    color: #9f80d0;
+}
+
+.main-header > * button {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+    color: #525252;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.main-header > * button:hover {
+    transition: background-color 0.3s ease-in-out;
+    background-color: #b39bda;
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MemeGen</title>
+    <script
+      src="https://kit.fontawesome.com/9788c2d745.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body class="main-layout" onload="onInit()">
+    <!-- MAIN HEADER -->
+    <header class="main-header full">
+      <div class="header-container flex space-between align-center flow-column">
+        <div class="logo">
+          <h2>MemeGenerator</h2>
+        </div>
+        <nav class="main-nav">
+          <ul class="clean-list grid flow-column">
+            <!-- <li><button class="meme-btn" onclick="onClickMeme()">Meme</button></li> -->
+            <li>
+              <button class="gallery-btn" onclick="onClickGallery()">
+                Gallery
+              </button>
+            </li>
+            <!-- my memes -->
+            <li>
+              <button class="my-memes-btn" onclick="onClickMyMemes()">
+                My Memes
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-container grid">
+      <!-- MEME -->
+        <div class="meme-container grid" style="display: none;">
+
+        <!-- ABOUT -->
+        <section class="about-container">
+          <h1>ABOUT</h1>
+          <p>
+            <i class="fas fa-info-circle"></i>
+            <br>
+            Meme Generator is a free online image maker that allows you to add
+            custom resizable text to images. It operates in HTML5 canvas, so
+            your images are created instantly on your own device.
+          </p>
+          <p>
+            <i class="fas fa-code"></i><br>
+          This project was created by <a href="">Daniel Levy</a>
+          <br>as part of Coding Academy's Full Stack Web Development course.
+          </p>
+          <p>
+            <i class="fab fa-github"></i>
+            <a href="github.com/daniellevy100">github.com/danielevy</a><br>
+            
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:daniellofficial@gmail.com">daniellofficial@gmail.com</a>
+
+          </p>
+        </section>
+        <!-- CANVAS -->
+        <section class="canvas-container">
+          <canvas id="meme-canvas" width="500" height="500"></canvas>
+        </section>
+
+        <!-- TOOLS -->
+        <section class="tools-container">
+          <h1>TOOLS</h1>
+
+          <!-- text input -->
+          <input
+            type="text"
+            id="text-input"
+            placeholder="Enter text here"
+            oninput="onTextChange(this.value)"
+          />
+
+          <!-- element controls: switch between lines -->
+          <div class="element-controls">
+            <button onclick="onSwitchLine(-1)">
+              <i class="fas fa-arrow-up"></i>
+            </button>
+            <button onclick="onSwitchLine(1)">
+              <i class="fas fa-arrow-down"></i>
+            </button>
+            <!-- add line from text input -->
+            <button onclick="onAddLine()">
+              <i class="fa-solid fa-square-plus"></i>
+            </button>
+            <!-- delete line -->
+            <button onclick="onDeleteLine()">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+
+          <!-- font size, align -->
+          <div class="font-controls">
+            <button onclick="onFontSizeChange(3)">
+              A<i class="fas fa-plus"></i>
+            </button>
+            <button onclick="onFontSizeChange(-3)">
+              A<i class="fas fa-minus"></i>
+            </button>
+            <!-- align text left center right -->
+            <button onclick="onAlignText('right')">
+              <i class="fas fa-align-left"></i>
+            </button>
+            <button onclick="onAlignText('center')">
+              <i class="fas fa-align-center"></i>
+            </button>
+            <button onclick="onAlignText('left')">
+              <i class="fas fa-align-right"></i>
+            </button>
+          </div>
+          <!-- font picker, stroke color, font color -->
+          <div class="font-controls flex">
+            <p>Font:</p>
+            <select id="font-picker" onchange="onFontChange(this.value)">
+              <option value="impact">Impact</option>
+              <option value="arial">Arial</option>
+              <option value="comic sans ms">Comic Sans MS</option>
+              <option value="times new roman">Times New Roman</option>
+              <option value="verdana">Verdana</option>
+            </select>
+          </div>
+          <div class="font-colors">
+            <p>Stroke Color:</p>
+            <input
+              type="color"
+              id="stroke-color"
+              oninput="onStrokeColorChange(this.value)"
+            />
+
+            <p>Font Color:</p>
+            <input
+              type="color"
+              id="font-color"
+              oninput="onFontColorChange(this.value)"
+            />
+          </div>
+
+          <!-- add stickers carousel -->
+          <!-- <div class="sticker-carousel">
+          <button class="prev" onclick="onPrevSticker()"><</button>
+          <div class="stickers">
+            <h3>❔</h3>
+            <h3>❔</h3>
+            <h3>❔</h3>
+            <h3>❔</h3>
+            <h3>❔</h3>
+            <h3>❔</h3>
+          </div>
+          <button class="next" onclick="onNextSticker()">></button>
+        </div> -->
+
+          <!-- download AND SHARE meme -->
+          <div class="download-share">
+            <!-- My Collection button -->
+            <button onclick="onSaveMeme()">Save <i class="fas fa-save"></i></button>
+            <button onclick="onDownloadMeme(this)">Download <i class="fas fa-download"></i></button>
+            <button onclick="onShareMeme()">Share <i class="fas fa-share"></i></button>
+            <a id="hiddenLink"></a>
+        </div>
+        </section>
+      </div>
+
+      <div class="gallery-container">
+        <!-- add search bar and keywords selector -->
+        <h1>Gallery</h1>
+        <section class="search-options">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search"
+            oninput="onSearch(this.value)"
+          />
+          <article class="keywords flex">
+            <h3>Keywords:</h3>
+            <ul class="clean-list flex">
+                <li data-clicks="0" onclick="onSearch('all', this)">All</li>
+              <li data-clicks="0" onclick="onSearch('happy', this)">Happy</li>
+              <li data-clicks="0" onclick="onSearch('sad', this)">Sad</li>
+              <li data-clicks="0" onclick="onSearch('funny', this)">Funny</li>
+              <li data-clicks="0" onclick="onSearch('cute', this)">Cute</li>
+              <li data-clicks="0" onclick="onSearch('angry', this)">Angry</li>
+            </ul>
+          </article>
+        </section>
+        <!-- add random button and updload button -->
+        <section class="gallery-controls">
+          <button onclick="onRandomImg()">Im flexible! <i class="fas fa-random"></i></button>
+         <!-- in upload img send the ev -->
+            <label for="input-file" class="upload-btn">Upload <i class="fas fa-upload"></i></label>
+            <input type="file" accept="image/*" onchange="onUploadImg(event)" id="input-file">
+        </section>
+        <section class="gallery"></section>
+      </div>
+
+        <div class="my-memes">
+            <h1>My Memes</h1>
+            <section class="my-memes-gallery"></section>
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="logo">
+          <!-- <h2>MemeGenerator</h2> -->
+          <p><i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by Daniel Levy</p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/gallery.controller.js"></script>
+    <script src="js/meme.controller.js"></script>
+    <script src="js/myMeme.controller.js"></script>
+
+  </body>
+</html>

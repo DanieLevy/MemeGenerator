@@ -1,0 +1,125 @@
+/* CANVAS */
+
+.canvas-container {
+    text-align: center;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    border-radius: 10px;
+    /* padding: 20px; */
+}
+
+
+#meme-canvas {
+    vertical-align: top;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* TOOLS */
+
+.tools-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+    /* background-color: red; */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.tools-container > * {
+    margin: 10px;
+}
+
+.tools-container > input {
+    align-self: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(66, 66, 66, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.tools-container > h1 {
+    align-self: center;
+    margin-bottom: 20px;
+    color: #9f80d0;
+}
+
+.tools-container > * > button {
+    min-width: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #9f80d0;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tools-container > * > button:hover {
+    transition: background-color 0.2s ease-in-out;
+    background-color: #b39bda;
+}
+
+#font-picker {
+    align-self: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(66, 66, 66, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.font-colors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-top: 0;
+}
+
+.font-controls > p {
+    margin-inline-end: 10px;
+}
+
+.font-colors > * {
+    margin: 5px;
+}
+
+.font-colors > * > input {
+border: 1px solid #ccc;
+box-shadow: 0 0 10px rgba(66, 66, 66, 0.2);
+border-radius: 5px;
+padding: 10px;
+
+}
+
+/* ABOUT */
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: red; */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.about-container > * {
+    margin: 10px;
+}
+
+.about-container > h1 {
+    margin-top: 30px;
+    align-self: center;
+    margin-bottom: 20px;
+    color: #9f80d0;
+}
+.about-container > * a {
+    padding-inline-start: 10px;
+    text-decoration: none;
+    color: #9f80d0;
+}
+
+.meme-container > * p {
+    color: #767676;
+}
