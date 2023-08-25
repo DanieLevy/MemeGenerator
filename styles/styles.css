@@ -1,6 +1,5 @@
 /* SETUP */
 @import url("setup/vars.css");
-/* @import url("setup/typography.css"); */
 
 /* BASICS */
 @import url("basics/base.css");
@@ -13,7 +12,6 @@
 @import url("components/main-container.css");
 @import url("components/myMemes.css");
 @import url("components/main-footer.css");
-/* @import url("components/main-card.css"); */
 
 /* MEDIA QUERIES */
 /* @import url("setup/mq.css");     */

@@ -39,30 +39,30 @@
     <!-- MAIN -->
     <main class="main-container grid">
       <!-- MEME -->
-        <div class="meme-container grid" style="display: none;">
-
+      <div class="meme-container grid" style="display: none">
         <!-- ABOUT -->
         <section class="about-container">
           <h1>ABOUT</h1>
           <p>
             <i class="fas fa-info-circle"></i>
-            <br>
+            <br />
             Meme Generator is a free online image maker that allows you to add
             custom resizable text to images. It operates in HTML5 canvas, so
             your images are created instantly on your own device.
           </p>
           <p>
-            <i class="fas fa-code"></i><br>
-          This project was created by <a href="">Daniel Levy</a>
-          <br>as part of Coding Academy's Full Stack Web Development course.
+            <i class="fas fa-code"></i><br />
+            This project was created by <a href="">Daniel Levy</a> <br />as part
+            of Coding Academy's Full Stack Web Development course.
           </p>
           <p>
             <i class="fab fa-github"></i>
-            <a href="github.com/daniellevy100">github.com/danielevy</a><br>
-            
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:daniellofficial@gmail.com">daniellofficial@gmail.com</a>
+            <a href="github.com/daniellevy100">github.com/danielevy</a><br />
 
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:daniellofficial@gmail.com"
+              >daniellofficial@gmail.com</a
+            >
           </p>
         </section>
         <!-- CANVAS -->
@@ -163,11 +163,17 @@
           <!-- download AND SHARE meme -->
           <div class="download-share">
             <!-- My Collection button -->
-            <button onclick="onSaveMeme()">Save <i class="fas fa-save"></i></button>
-            <button onclick="onDownloadMeme(this)">Download <i class="fas fa-download"></i></button>
-            <button onclick="onShareMeme()">Share <i class="fas fa-share"></i></button>
+            <button onclick="onSaveMeme()">
+              Save <i class="fas fa-save"></i>
+            </button>
+            <button onclick="onDownloadMeme(this)">
+              Download <i class="fas fa-download"></i>
+            </button>
+            <button onclick="onShareMeme()">
+              Share <i class="fas fa-share"></i>
+            </button>
             <a id="hiddenLink"></a>
-        </div>
+          </div>
         </section>
       </div>
 
@@ -184,7 +190,7 @@
           <article class="keywords flex">
             <h3>Keywords:</h3>
             <ul class="clean-list flex">
-                <li data-clicks="0" onclick="onSearch('all', this)">All</li>
+              <li data-clicks="0" onclick="onSearch('all', this)">All</li>
               <li data-clicks="0" onclick="onSearch('happy', this)">Happy</li>
               <li data-clicks="0" onclick="onSearch('sad', this)">Sad</li>
               <li data-clicks="0" onclick="onSearch('funny', this)">Funny</li>
@@ -195,30 +201,42 @@
         </section>
         <!-- add random button and updload button -->
         <section class="gallery-controls">
-          <button onclick="onRandomImg()">Im flexible! <i class="fas fa-random"></i></button>
-         <!-- in upload img send the ev -->
-            <label for="input-file" class="upload-btn">Upload <i class="fas fa-upload"></i></label>
-            <input type="file" accept="image/*" onchange="onUploadImg(event)" id="input-file">
+          <button onclick="onRandomImg()">
+            Im flexible! <i class="fas fa-random"></i>
+          </button>
+          <!-- in upload img send the ev -->
+          <label for="input-file" class="upload-btn"
+            >Upload <i class="fas fa-upload"></i
+          ></label>
+          <input
+            type="file"
+            accept="image/*"
+            onchange="onUploadImg(event)"
+            id="input-file"
+          />
         </section>
         <section class="gallery"></section>
       </div>
 
-        <div class="my-memes">
-            <h1>My Memes</h1>
-            <section class="my-memes-gallery"></section>
-        </div>
-
+      <div class="my-memes-container">
+        <h1>My Memes</h1>
+        <section class="my-memes-gallery"></section>
+      </div>
     </main>
 
     <footer class="main-footer">
       <div class="footer-container">
         <div class="logo">
           <!-- <h2>MemeGenerator</h2> -->
-          <p><i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by Daniel Levy</p>
+          <p>
+            <i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by
+            Daniel Levy
+          </p>
         </div>
       </div>
     </footer>
 
+    <div class="popup"></div>
 
     <script src="js/services/util.service.js"></script>
     <script src="js/services/storage.service.js"></script>
@@ -226,6 +244,5 @@
     <script src="js/gallery.controller.js"></script>
     <script src="js/meme.controller.js"></script>
     <script src="js/myMeme.controller.js"></script>
-
   </body>
 </html>

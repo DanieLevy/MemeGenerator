@@ -1,24 +1,19 @@
 "use strict"
 
-var gMemes
-var ctx 
-var gLoadedMeme = null
-
 // myMeme Controller
 
+var gMemes
+var ctx
+var gLoadedMeme = null
+
 function loadMemes() {
-  // load the memes from local storage, and set them in the gMemes array
   gMemes = getMemes()
-  console.log("loadMemes")
   if (!gMemes) gMemes = []
-  console.log("gMemes", gMemes)
 }
 
 function renderMemes() {
-  // render the memes gallery
   const memeGallery = document.querySelector(".my-memes-gallery")
   const memes = gMemes.map((meme) => {
-    console.log("meme1", meme)
     const id = `meme-${meme.id}`
     return `
             <div class="meme-preview">
@@ -35,37 +30,35 @@ function renderMemes() {
 }
 
 function renderMyMeme(meme) {
-  // renders an image on the canvas and a line of text on top of it
   var img = new Image()
 
   var id = `meme-${meme.id}`
   img.src = `img/meme-imgs/${meme.selectedImgId}.jpg`
   var canvas = document.getElementById(id)
-  
+
   img.onload = () => {
+    ctx = canvas.getContext("2d")
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
 
-      ctx = canvas.getContext("2d")
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+    const xScale = canvas.width / 500
+    const yScale = canvas.height / 500
 
-      const xScale = canvas.width / 500 ;
-      const yScale = canvas.height / 500 ;
-      
-      meme.lines.forEach((line) => {
-        const scaledPosX = line.posX * xScale;
-        const scaledPosY = line.posY * yScale;
-        drawMyText(
-            line.txt,
-            scaledPosX,
-            scaledPosY,
-            line.size * xScale,
-            line.align,
-            line.color,
-            line.strokeColor,
-            line.strokeWidth,
-            line.font
-            )
-        })
-    }
+    meme.lines.forEach((line) => {
+      const scaledPosX = line.posX * xScale
+      const scaledPosY = line.posY * yScale
+      drawMyText(
+        line.txt,
+        scaledPosX,
+        scaledPosY,
+        line.size * xScale,
+        line.align,
+        line.color,
+        line.strokeColor,
+        line.strokeWidth,
+        line.font
+      )
+    })
+  }
 }
 
 function drawMyText(
@@ -89,23 +82,21 @@ function drawMyText(
 }
 
 function onDeleteMeme(memeId) {
-    // delete a meme from the gMemes array
-    deleteMeme(memeId)
-    loadMemes()
-    renderMemes()
-    }
+  let ask = confirm("Are you sure you want to delete this meme?")
+  if (!ask) return
+  deleteMeme(memeId)
+  loadMemes()
+  renderMemes()
+  showPopup("Meme deleted! ❌")
+}
 
-    function onEditMeme(memeId) {
-        // edit a meme from the gMemes array
-        console.log('onEditMeme')
-        console.log('memeId', memeId);
-        var meme = getMemeById(memeId)
-        console.log('meme', meme);
-        gIsLoaded = true
-        gLoadedMeme = meme
-        renderMeme()
+function onEditMeme(memeId) {
+  let meme = getMemeById(memeId)
+  gIsLoaded = true
+  gLoadedMeme = meme
+  renderMeme()
 
-        document.querySelector(".gallery-container").style.display = "none"
-        document.querySelector(".meme-container").style.display = "grid"
-        document.querySelector(".my-memes").style.display = 'none';
-    }
+  document.querySelector(".gallery-container").style.display = "none"
+  document.querySelector(".meme-container").style.display = "grid"
+  document.querySelector(".my-memes-container").style.display = "none"
+}

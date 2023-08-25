@@ -10,7 +10,8 @@ function createMeme(imgId, uploaded = false, newImgUrl = '') {
         selectedImgId: imgId,
         selectedLineIdx: 0,
         lines: [{
-            txt: 'I never eat Falafel',
+            txt: getRandomWords(),
+            // txt: 'Enter text here',
             size: 50,
             align: 'center',
             color: 'white',
@@ -85,9 +86,7 @@ function switchLine() {
     return gMeme.selectedLineIdx;
 }
 
-
-
-// UTILS
+// UTILS service functions
 
 function getSelectedLine() {
     if (gIsLoaded) {

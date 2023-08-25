@@ -20,7 +20,6 @@
     display: flex;
     align-items: center;
     justify-self: center;
-    /* justify-content: space-between; */
     width: 70%;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -71,8 +70,7 @@
 }
 
 .keywords > ul > li:hover {
-translate: scale(1.1);
-    
+    translate: scale(1.1);
 }
 
 .gallery {
@@ -92,7 +90,7 @@ translate: scale(1.1);
 
     filter: grayscale(80%);
     transition: filter 0.3s ease-in-out;
-    border-radius:5px;
+    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -108,14 +106,15 @@ translate: scale(1.1);
     margin: 20px;
 }
 
-.gallery-controls > button, .upload-btn {
+.gallery-controls > button,
+.upload-btn {
     min-width: 50px;
     max-height: 40px;
     padding: 10px;
     margin: 1em;
     border: none;
     border-radius: 5px;
-    background-color: #9f80d0;
+    background-color: var(--color-primary);
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
@@ -123,10 +122,9 @@ translate: scale(1.1);
 
 .gallery-controls > button:hover {
     transition: background-color 0.2s ease-in-out;
-    background-color: #b39bda;
+    background-color: var(--color-primary);
 }
 
 .gallery-controls > input {
     display: none;
 }
-
