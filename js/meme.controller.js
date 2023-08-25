@@ -68,7 +68,7 @@ function onUp() {
 }
 
 function getEvPos(ev) {
-  const pos = {
+  var pos = {
     x: ev.offsetX,
     y: ev.offsetY,
   }
