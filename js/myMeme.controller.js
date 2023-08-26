@@ -14,6 +14,7 @@ function loadMemes() {
 function renderMemes() {
   const memeGallery = document.querySelector(".my-memes-gallery")
   const memes = gMemes.map((meme) => {
+
     const id = `meme-${meme.id}`
     return `
             <div class="meme-preview">

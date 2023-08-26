@@ -253,8 +253,6 @@ function onTextChange(text) {
   if (line) {
     changeText(text, getSelectedLineIdx())
     renderMeme()
-  } else {
-    showPopup("❗Please select a line.")
   }
 }
 
@@ -343,6 +341,7 @@ function downloadMeme() {
   link.href = imgContent
   link.download = "my-meme.jpg"
   link.click()
+  return imgContent
 }
 
 function onSaveMeme() {
@@ -351,3 +350,10 @@ function onSaveMeme() {
   renderMemes()
   showPopup("✅ Meme saved!")
 }
+
+
+function onShareMeme() {
+showPopup("❗Under construction")
+}
+
+
