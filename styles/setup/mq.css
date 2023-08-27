@@ -10,6 +10,11 @@
     .main-container {
         display: block;
     }
+
+    .tools-container {
+        place-items: center;
+    }
+
     .gallery {
         grid-template-columns: repeat(2, 200px);
         grid-template-rows: repeat(5, 200px);
@@ -126,6 +131,20 @@
     .hamburger {
         display: none;
     }
+
+    .main-footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+
+    }
+    .main-header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        background-color: rgba(255, 187, 0, 0.844);
+    }
     
 }
 
@@ -145,6 +164,8 @@
 @media (min-width: 1100px) {
     .gallery {
         grid-template-columns: repeat(5, 200px);
+        grid-template-rows: repeat(4, 200px);
+
     }
 }
 

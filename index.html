@@ -10,6 +10,9 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles/styles.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
   </head>
 
   <body class="main-layout" onload="onInit()">
@@ -33,6 +36,7 @@
                   My Memes
                 </button>
               </li>
+              
             </ul>
           </nav>
         </div>
@@ -111,11 +115,11 @@
               <i class="fas fa-arrow-down"></i>
             </button>
             <!-- add line from text input -->
-            <button onclick="onAddLine()">
+            <button id="addBtn" onclick="onAddLine()">
               <i class="fa-solid fa-square-plus"></i>
             </button>
             <!-- delete line -->
-            <button onclick="onDeleteLine()">
+            <button id="delBtn" onclick="onDeleteLine()">
               <i class="fas fa-trash-alt"></i>
             </button>
           </div>

@@ -19,5 +19,5 @@
 }
 
 .footer-container * > h2, p {
-    color: lightcoral;
+    color: var(--color-primary);
 }

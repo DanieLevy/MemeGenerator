@@ -61,10 +61,6 @@
     border-bottom: 1px solid #fff;
 }
 
-/* hover */
-/* // not :last-child */
-
-
 .menu-overlay > nav > ul > li:hover {
     background-color: #000000cf;
     color: white;

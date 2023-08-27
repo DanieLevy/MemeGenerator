@@ -40,7 +40,6 @@
 .tools-container > h1 {
     align-self: center;
     margin-bottom: 20px;
-    color: lightcoral;
 }
 
 .tools-container > * > button {
@@ -48,15 +47,16 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: lightcoral;
+    background-color: #111111cc;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
 }
 
-.tools-container > * > button:hover {
+* body > * button:hover {
     transition: background-color 0.2s ease-in-out;
-    background-color: lightcoral;
+    background-color: rgb(244, 244, 244);
+    color: #ffffff;
 }
 
 #font-picker {
@@ -118,4 +118,46 @@
 
 .meme-container > * p {
     color: #767676;
+}
+
+/* BTNS */
+
+.element-controls > button {
+background-color: #3740ffd6;
+}
+
+/* hover */
+.element-controls > button:hover {
+background-color: #3740ff;
+}
+
+
+#addBtn {
+background-color: #4CAF50;
+}
+
+#delBtn {
+background-color: #f44336;
+}
+
+.download-share > button:first-of-type {
+    background-color: #4CAF50;
+}
+
+
+.download-share > button:nth-of-type(2) {
+    background-color: #9f57fe;
+}
+
+.download-share > button:last-of-type {
+    background-color: #3740ffd6;
+}
+
+.gallery-controls > button:first-of-type {
+    background-color: #3740ffd6;
+}
+
+.gallery-controls > button:first-of-type:hover {
+    background-color: #3740ff;
+    color: #fff;
 }
