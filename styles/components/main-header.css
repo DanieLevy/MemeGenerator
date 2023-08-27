@@ -39,7 +39,7 @@
     transition: text-shadow 0.5s ease-in-out;
 }
 
-.main-header > * button {
+.gallery-btn, .my-memes-btn {
     background-color: #eee;
     border: none;
     padding: 0.8rem;

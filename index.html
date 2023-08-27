@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +11,7 @@
     ></script>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
+
   <body class="main-layout" onload="onInit()">
     <!-- MAIN HEADER -->
     <header class="main-header full">
@@ -17,7 +19,26 @@
         <div class="logo">
           <h2>MemeGenerator</h2>
         </div>
+        <button class="hamburger" onclick="onOpenMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="menu-overlay">
+          <nav>
+            <ul class="clean-list flex">
+              <li onclick="onClickGallery()">
+                  Gallery
+              </li>
+              <li onclick="onClickMyMemes()">
+                  My Memes
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
         <nav class="main-nav">
+
           <ul class="clean-list grid flow-column">
             <!-- <li><button class="meme-btn" onclick="onClickMeme()">Meme</button></li> -->
             <li>
@@ -39,7 +60,7 @@
     <!-- MAIN -->
     <main class="main-container grid">
       <!-- MEME -->
-      <div class="meme-container grid" style="display: none">
+      <div class="meme-container" style="display: none">
         <!-- ABOUT -->
         <section class="about-container">
           <h1>ABOUT</h1>
@@ -69,7 +90,6 @@
         <section class="canvas-container">
           <canvas id="meme-canvas" width="500" height="500"></canvas>
         </section>
-
         <!-- TOOLS -->
         <section class="tools-container">
           <h1>TOOLS</h1>
@@ -177,6 +197,7 @@
         </section>
       </div>
 
+      <!-- GALLERY -->
       <div class="gallery-container">
         <!-- add search bar and keywords selector -->
         <h1>Gallery</h1>
@@ -215,15 +236,17 @@
             id="input-file"
           />
         </section>
-        <section class="gallery"></section>
+        <section class="gallery grid"></section>
       </div>
 
+      <!-- MY MEMES -->
       <div class="my-memes-container">
         <h1>My Memes</h1>
         <section class="my-memes-gallery"></section>
       </div>
     </main>
 
+    <!-- FOOTER -->
     <footer class="main-footer">
       <div class="footer-container">
         <div class="logo">
@@ -236,6 +259,7 @@
       </div>
     </footer>
 
+    <!-- POPUP Div -->
     <div class="popup"></div>
 
     <script src="js/services/util.service.js"></script>
@@ -245,4 +269,5 @@
     <script src="js/meme.controller.js"></script>
     <script src="js/myMeme.controller.js"></script>
   </body>
+
 </html>

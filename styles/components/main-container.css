@@ -1,6 +1,7 @@
 /* CANVAS */
 
 .canvas-container {
+    grid-row: 1;
     text-align: center;
     border-radius: 10px;
 }
@@ -14,6 +15,7 @@
 /* TOOLS */
 
 .tools-container {
+    grid-row: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;

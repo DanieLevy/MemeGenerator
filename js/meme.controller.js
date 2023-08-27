@@ -141,10 +141,12 @@ function isCanvasClicked(clickedPos) {
 }
 
 function resizeCanvas() {
-  let elContainer = document.querySelector("#meme-canvas")
+// resize canvas to fit screen with the same proportions
+  let elContainer = document.querySelector(".canvas-container")
   gElCanvas.width = elContainer.offsetWidth
   gElCanvas.height = elContainer.offsetHeight
 }
+
 
 function renderMeme() {
   let meme = getMeme()
@@ -356,4 +358,6 @@ function onShareMeme() {
 showPopup("❗Under construction")
 }
 
-
+function onOpenMenu() {
+  document.body.classList.toggle("menu-open")
+}

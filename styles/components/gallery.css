@@ -1,6 +1,6 @@
 .gallery-container {
-    display: grid;
-    grid-template-columns: 20px 1fr 20px;
+    /* display: grid; */
+    /* grid-template-columns: 20px 1fr 20px; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -20,11 +20,13 @@
     display: flex;
     align-items: center;
     justify-self: center;
-    width: 70%;
+    width: 100%;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding-inline-start: 15px;
+    overflow-y: overlay;
+
 }
 
 .search-options > h3 {
@@ -32,7 +34,7 @@
 }
 
 .search-options > #search-bar {
-    width: min(100%, 300px);
+    /* width: min(100%, 300px); */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
